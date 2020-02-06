@@ -149,4 +149,11 @@ public class ThreeActivity extends AppCompatActivity implements View.OnClickList
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        // 释放本地质量控制模型
+        CameraNativeHelper.release();
+        super.onDestroy();
+    }
 }
